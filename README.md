@@ -10,6 +10,18 @@ A .NET 10 integration middleware that bridges **FieldOps** (source, Azure Servic
 - [ARCHITECTURE-DECISIONS.md](ARCHITECTURE-DECISIONS.md) — Key architecture and design decisions
 - [FUTURE-IMPROVEMENTS.md](FUTURE-IMPROVEMENTS.md) — What could be added or improved
 
+### Initial Planning
+
+The `planing/` folder contains the upfront design work produced before implementation began:
+
+- [00-ARCHITECTURE-AND-SOLUTION-STRUCTURE.md](planing/00-ARCHITECTURE-AND-SOLUTION-STRUCTURE.md) — Overall architecture and project structure plan
+- [01-TASK1-EVENT-SUBSCRIBER.md](planing/01-TASK1-EVENT-SUBSCRIBER.md) — Event subscriber design (Service Bus, hosted service, routing)
+- [02-TASK2-ASSETHUB-API-CLIENT.md](planing/02-TASK2-ASSETHUB-API-CLIENT.md) — AssetHub HTTP client and OAuth design
+- [03-TASK3-DATA-TRANSFORMER.md](planing/03-TASK3-DATA-TRANSFORMER.md) — Data transformation and validation design
+- [04-TASK4-RESILIENCE-DLQ.md](planing/04-TASK4-RESILIENCE-DLQ.md) — Resilience pipeline and DLQ processor design
+- [05-EXECUTION-CHECKLIST.md](planing/05-EXECUTION-CHECKLIST.md) — Implementation checklist and task tracking
+- [06-HANDLER-ORCHESTRATION.md](planing/06-HANDLER-ORCHESTRATION.md) — Handler orchestration flow design
+
 ---
 
 ## Table of Contents

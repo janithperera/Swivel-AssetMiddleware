@@ -4,6 +4,14 @@ A .NET 10 integration middleware that bridges **FieldOps** (source, Azure Servic
 
 ---
 
+## Project Documentation
+
+- [ASSUMPTIONS.md](ASSUMPTIONS.md) — All domain, technical, and integration assumptions
+- [ARCHITECTURE-DECISIONS.md](ARCHITECTURE-DECISIONS.md) — Key architecture and design decisions
+- [FUTURE-IMPROVEMENTS.md](FUTURE-IMPROVEMENTS.md) — What could be added or improved
+
+---
+
 ## Table of Contents
 
 1. [Local Setup & Running](#1-local-setup--running)

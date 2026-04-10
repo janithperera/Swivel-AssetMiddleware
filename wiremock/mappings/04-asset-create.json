@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPathPattern": "/v1/projects/[^/]+/assets"
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "data": {
+        "id": "asset-001",
+        "assetId": "mock-asset-created"
+      }
+    }
+  }
+}

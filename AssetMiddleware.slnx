@@ -1,0 +1,19 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/src/">
+    <Project Path="src/AssetMiddleware.Api/AssetMiddleware.Api.csproj" />
+    <Project Path="src/AssetMiddleware.Application/AssetMiddleware.Application.csproj" />
+    <Project Path="src/AssetMiddleware.Domain/AssetMiddleware.Domain.csproj" />
+    <Project Path="src/AssetMiddleware.Infrastructure/AssetMiddleware.Infrastructure.csproj" />
+    <Project Path="src/AssetMiddleware.MockServer/AssetMiddleware.MockServer.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AssetMiddleware.Application.Tests/AssetMiddleware.Application.Tests.csproj" />
+    <Project Path="tests/AssetMiddleware.Domain.Tests/AssetMiddleware.Domain.Tests.csproj" />
+    <Project Path="tests/AssetMiddleware.Infrastructure.Tests/AssetMiddleware.Infrastructure.Tests.csproj" />
+  </Folder>
+</Solution>

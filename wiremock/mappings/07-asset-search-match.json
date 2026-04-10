@@ -1,0 +1,27 @@
+{
+  "priority": 1,
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/v1/projects/[^/]+/assets",
+    "queryParameters": {
+      "search": {
+        "matches": "Caterpillar-320-SN9901"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "data": [
+        {
+          "id": "asset-001",
+          "assetId": "Caterpillar-320-SN9901",
+          "onsite": false
+        }
+      ]
+    }
+  }
+}

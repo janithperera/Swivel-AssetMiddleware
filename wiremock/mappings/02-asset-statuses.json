@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/v1/companies/[^/]+/asset-statuses"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "data": [
+        { "id": 1, "name": "Active" },
+        { "id": 2, "name": "Inactive" },
+        { "id": 3, "name": "Retired" }
+      ]
+    }
+  }
+}

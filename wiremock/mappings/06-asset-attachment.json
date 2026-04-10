@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPathPattern": "/v1/projects/[^/]+/assets/[^/]+/attachments"
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "data": {
+        "id": "attachment-001",
+        "url": "https://storage.example.com/assets/mock-upload.jpg"
+      }
+    }
+  }
+}

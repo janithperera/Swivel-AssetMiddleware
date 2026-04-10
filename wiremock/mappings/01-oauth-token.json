@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/oauth/token"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "access_token": "mock-access-token-dev",
+      "token_type": "Bearer",
+      "expires_in": 5400,
+      "created_at": "{{now epochOffset=0 unit='seconds'}}"
+    },
+    "transformers": ["response-template"]
+  }
+}

@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  # ── WireMock — AssetHub API mock (http://localhost:9090) ───────────────────
+  wiremock:
+    image: wiremock/wiremock:3.10.0
+    container_name: assethub-mock
+    ports:
+      - "9090:8080"
+    volumes:
+      - ./wiremock/mappings:/home/wiremock/mappings
+      - ./wiremock/__files:/home/wiremock/__files
+    command: ["--verbose"]
+
+  # ── Azure Service Bus Emulator ─────────────────────────────────────────────
+  # The emulator requires an SQL Edge instance as its backing store.
+  servicebus-emulator:
+    image: mcr.microsoft.com/azure-messaging/servicebus-emulator:latest
+    container_name: servicebus-emulator
+    pull_policy: always
+    ports:
+      - "5672:5672"     # AMQP — used by the Azure SDK
+      - "9354:9354"     # Management / HTTP API
+    environment:
+      ACCEPT_EULA: "Y"
+      SQL_SERVER: sqledge
+      MSSQL_SA_PASSWORD: "Dev@Passw0rd123!"
+    volumes:
+      - ./config/servicebus-config.json:/ServiceBus_Emulator/ConfigFiles/Config.json
+    depends_on:
+      sqledge:
+        condition: service_healthy
+    networks:
+      sb_emulator:
+        aliases:
+          - "sbemulator"
+
+  # SQL Edge — backing store for the Service Bus Emulator
+  sqledge:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    platform: linux/amd64   # Required on Apple Silicon (runs under Rosetta)
+    container_name: sqledge
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Dev@Passw0rd123!"
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Dev@Passw0rd123!" -Q "SELECT 1" -b -o /dev/null
+      interval: 10s
+      timeout: 30s
+      retries: 5
+      start_period: 15s
+    networks:
+      - sb_emulator
+
+networks:
+  sb_emulator:

@@ -1,0 +1,31 @@
+{
+  "UserConfig": {
+    "Namespaces": [
+      {
+        "Name": "sbemulatorns",
+        "Topics": [
+          {
+            "Name": "fieldops-events",
+            "Properties": {
+              "DefaultMessageTimeToLive": "PT1H",
+              "MaxSizeInMegabytes": 1024
+            },
+            "Subscriptions": [
+              {
+                "Name": "asset-middleware",
+                "Properties": {
+                  "MaxDeliveryCount": 5,
+                  "DefaultMessageTimeToLive": "PT1H",
+                  "LockDuration": "PT1M"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Logging": {
+      "Type": "Console"
+    }
+  }
+}

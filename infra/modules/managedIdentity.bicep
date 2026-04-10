@@ -1,0 +1,19 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// modules/managedIdentity.bicep
+// User-assigned Managed Identity for the App Service.
+// Used to authenticate to Service Bus and Key Vault without connection strings.
+// ─────────────────────────────────────────────────────────────────────────────
+
+param name string
+param location string
+param tags object = {}
+
+resource identity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
+  name: name
+  location: location
+  tags: tags
+}
+
+output identityId string = identity.id
+output principalId string = identity.properties.principalId
+output clientId string = identity.properties.clientId

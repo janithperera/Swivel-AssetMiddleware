@@ -2,6 +2,8 @@
 
 A .NET 10 integration middleware that bridges **FieldOps** (source, Azure Service Bus) and **AssetHub** (target, REST API). It subscribes to equipment events, transforms and validates them, authenticates with AssetHub via OAuth 2.0, and writes asset records — with resilience, dead-letter handling, and full Bicep IaC.
 
+> **Note:** This solution was designed and implemented with the assistance of **GitHub Copilot** (Agent mode).
+
 ---
 
 ## Project Documentation
